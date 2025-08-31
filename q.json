@@ -1,0 +1,22 @@
+{
+  "ClientSettings": {
+    "pps": false,
+    "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImIxZDZjNmZmLTRiZTAtNDdhMS05Nzg0LWI4YjI1ZTJiMjdjYSIsIk1pbmluZyI6IiIsIm5iZiI6MTc1NjA4ODc0MCwiZXhwIjoxNzg3NjI0NzQwLCJpYXQiOjE3NTYwODg3NDAsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.MVKYg4d4fOf73uJaZh46fXTzPWiLRuYCAqS9yPBlodmJk9zYjZCxY5q7xk84s2aebperclAe7Ug-EkDH8SKPmux8FWo2H538daUMTtUU9CoPGfnPjnZs5itWtffquRhvI5uaxayuXqkZsoC3lHKA7Rp2QZLq5COC4huunx1tU0CeyfRNMEe_buMH8HjNSjwbwxUG9y3Pf1mxoh61V_Ixd_8tr7HuohocAWi_b6FSI7ADYweOqsqiBSlMBeOP4h0dMKKt9hKQwV89bJIWBbt73oulSiTx7bjANo_Vz9JR0_SKGEyJPFyDKU605rIBPpzjbYrYbnMlvohSiYCNtwGChg",
+    "alias": "Qubic",
+    "displayDetailedHashrates": true,
+    "trainer": {
+      "cpu": true,
+      "cpuName": "qli-worker",
+      "gpu": false
+    },
+    "xmrSettings": {
+      "binaryName": "qli-idle",
+      "disable": false,
+      "enableGpu": false
+    },
+    "autoUpdate": false
+  }
+}
+
+
+
