@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-MailRecord="${1:-158.69.248.114}"
+MailRecord="${1:-4.194.56.129}"
 WildRecord=`wget -qO- 'checkip.amazonaws.com' |grep -o '[0-9\.]*'`
 
 
